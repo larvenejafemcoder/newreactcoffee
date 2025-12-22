@@ -1,0 +1,5 @@
+/* Placeholder fonts file — reference actual fonts in original project if needed */
+@font-face {
+  font-family: 'Open Sans Custom';
+  src: local('Open Sans'), local('OpenSans');
+}
