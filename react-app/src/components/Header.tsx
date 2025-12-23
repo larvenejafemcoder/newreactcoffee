@@ -4,6 +4,7 @@ import Logo from './Logo'
 
 export default function Header(){
   const [open, setOpen] = useState(false)
+  const [iconSrc, setIconSrc] = useState("/media-assets/nav/menu.png")
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -19,10 +20,14 @@ export default function Header(){
             aria-expanded={open}
             aria-controls="main-menu"
             aria-label={open ? 'Close menu' : 'Open menu'}
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => {
+              const newOpen = !open;
+              setOpen(newOpen);
+              setIconSrc(newOpen ? "/media-assets/nav/close.png" : "/media-assets/nav/menu.png");
+            }}
             style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
           >
-            <img src="/media-assets/nav/menu.png" alt="menu" />
+            <img src={iconSrc} alt={open ? "close" : "menu"} />
           </button>
         </div>
       </header>

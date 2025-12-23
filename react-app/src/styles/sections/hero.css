@@ -11,7 +11,7 @@
 }
 
 .menu-box ul li a:hover {
-  transform: scale(1.05);
+  transform: scale(1.5);
   color: var(--sandy-brown);
 }
 
@@ -60,7 +60,7 @@
 .main .left-content h1 {
   padding: 3rem;
   text-align: left;
-  font-size: clamp(2rem, 6vw, 6rem);
+  font-size: clamp(3rem, 6vw, 6rem);
   line-height: 1;
   background: -webkit-linear-gradient(15deg, var(--gradient-dark), var(--gradient-light));
   -webkit-background-clip: text;
