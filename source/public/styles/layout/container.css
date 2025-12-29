@@ -1,0 +1,65 @@
+/*-----------------------------------
+  Container Styles
+-----------------------------------*/
+.container {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  position: fixed;
+  background-color: var(--bg-overlay);
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  border: solid 0.5px rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.container img {
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.container .box img {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding-top: 6px;
+  padding-right: 16px;
+}
+
+.container .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  color: white;
+}
+
+.container .logo svg {
+  width: 180px;
+  max-width: 55%;
+  height: auto;
+  transition: width 0.25s ease;
+  /* ensure svg renders bright on dark backgrounds */
+  fill: #ffffff;
+}
+
+/* Force any internal path elements to pure white for contrast */
+.container .logo svg path {
+  fill: #ffffff !important;
+}
+
+.container .logo {
+  color: #ffffff;
+}
+
+.container .logo h1 {
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: 700;
+}
