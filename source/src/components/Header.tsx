@@ -37,7 +37,7 @@ export default function Header(){
         <ul>
           <li><Link to="/" onClick={() => setOpen(false)}>Home</Link></li>
           <li><Link to="/slider" onClick={() => setOpen(false)}>Showcase</Link></li>
-          <li><a href="#" onClick={() => setOpen(false)}>smt</a></li>
+          <li><Link to="/clock" onClick={() => setOpen(false)}>Clock</Link></li>
           <li><a href="#" onClick={() => setOpen(false)}>smt</a></li>
         </ul>
       </div>

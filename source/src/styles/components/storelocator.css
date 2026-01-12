@@ -1,0 +1,124 @@
+.store-locator {
+  padding: 4rem 2rem;
+  background-color: var(--smoky-black);
+  color: var(--white-coffee);
+}
+
+.store-locator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.store-locator-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--white-coffee);
+}
+
+.store-locator-text {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--white-coffee);
+  opacity: 0.9;
+}
+
+.store-locator-form {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  color: var(--white-coffee);
+}
+
+.form-group select {
+  padding: 1rem;
+  border: 2px solid var(--sandy-brown);
+  border-radius: 0.5rem;
+  background-color: var(--xiketic);
+  color: var(--white-coffee);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: var(--gradient-light);
+}
+
+.form-group select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.store-locator-btn {
+  padding: 1rem 2rem;
+  background-color: var(--sandy-brown);
+  color: var(--white-coffee);
+  border: none;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1rem;
+}
+
+.store-locator-btn:hover {
+  background-color: var(--gradient-light);
+  transform: scale(1.05);
+}
+
+.locator-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.locator-icons img {
+  max-width: 150px;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.locator-icons img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .store-locator {
+    padding: 2rem 1rem;
+  }
+
+  .locator-icons {
+    gap: 1rem;
+  }
+
+  .locator-icons img {
+    max-width: 100px;
+  }
+}

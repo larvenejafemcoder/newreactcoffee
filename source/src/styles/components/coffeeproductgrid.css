@@ -1,0 +1,105 @@
+.coffee-product-grid {
+  padding: 4rem 2rem;
+  background-color: var(--smoky-black);
+  color: var(--white-coffee);
+}
+
+.coffee-product-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.product-card {
+  background-color: var(--xiketic);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(215, 138, 59, 0.2);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(215, 138, 59, 0.3);
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: var(--eerie-black);
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.product-name {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--white-coffee);
+}
+
+.product-price {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: var(--sandy-brown);
+  font-weight: 700;
+}
+
+.view-more-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.view-more-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: var(--sandy-brown);
+  color: var(--white-coffee);
+  text-decoration: none;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.view-more-btn:hover {
+  background-color: var(--gradient-light);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .coffee-product-grid {
+    padding: 2rem 1rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}

@@ -6,6 +6,16 @@
 @import './components/slider.css';
 @import './sections/hero.css';
 @import './components/coffeemachine.css';
+@import './components/clock.css';
+@import './components/brandstory.css';
+@import './components/featuredproducts.css';
+@import './components/coffeeproductgrid.css';
+@import './components/qualitystory.css';
+@import './components/storelocator.css';
+@import './components/instagramfeed.css';
+@import './components/newssection.css';
+@import './components/footer.css';
+@import './pages/home.css';
 
 
 /*-----------------------------------

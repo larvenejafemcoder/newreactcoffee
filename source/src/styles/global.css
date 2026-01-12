@@ -2,5 +2,12 @@
 @import url('/styles/core.css');
 
 /* Add any React-specific overrides here */
-html,body,#root { height: 100%; }
-main { min-height: calc(100vh - 74px); }
+html, body, #root { 
+  height: auto;
+  min-height: 100%;
+}
+
+main { 
+  min-height: calc(100vh - 90px);
+  width: 100%;
+}

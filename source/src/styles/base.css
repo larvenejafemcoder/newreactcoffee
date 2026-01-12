@@ -8,7 +8,8 @@ body {
   background-color: var(--smoky-black);
   color: var(--white-coffee);
   font-family: 'Open Sans', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-font-smoothing: antialiased;
 }
 

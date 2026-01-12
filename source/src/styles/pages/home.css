@@ -1,0 +1,30 @@
+/* Home Page Layout */
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--smoky-black);
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling between sections */
+.main-content > * {
+  scroll-margin-top: 90px;
+}
+
+/* Ensure proper spacing and flow */
+.main-content > section {
+  position: relative;
+}
+
+/* Smooth transitions when scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
