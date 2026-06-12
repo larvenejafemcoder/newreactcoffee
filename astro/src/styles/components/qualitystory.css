@@ -1,0 +1,136 @@
+.quality-story {
+  padding: 8rem 2rem;
+  background: var(--dark-roast);
+  position: relative;
+}
+
+.quality-story::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.2), transparent);
+}
+
+.quality-story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.quality-story-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.quality-story-item.reverse {
+  direction: rtl;
+}
+
+.quality-story-item.reverse > * {
+  direction: ltr;
+}
+
+.quality-story-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.quality-story-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201, 169, 110, 0.12);
+  pointer-events: none;
+}
+
+.quality-story-image img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  transition: transform 1s ease;
+}
+
+.quality-story-image:hover img {
+  transform: scale(1.03);
+}
+
+.quality-story-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quality-story-number {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--mocha);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.quality-story-heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+  line-height: 1.3;
+  font-family: var(--font-display);
+}
+
+.quality-story-text {
+  color: var(--cream);
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.quality-story-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--latte);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid var(--latte);
+  align-self: flex-start;
+}
+
+.quality-story-btn:hover {
+  background: var(--latte);
+  color: var(--dark-roast);
+}
+
+@media (max-width: 768px) {
+  .quality-story {
+    padding: 4rem 1.5rem;
+  }
+  .quality-story-item {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .quality-story-item.reverse {
+    direction: ltr;
+  }
+  .quality-story-image img {
+    height: 280px;
+  }
+  .quality-story-container {
+    gap: 4rem;
+  }
+}

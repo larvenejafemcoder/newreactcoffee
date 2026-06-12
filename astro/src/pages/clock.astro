@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Clock from '../components/Clock';
+---
+
+<Layout>
+  <Header client:load />
+  <main class="clock-page">
+    <Clock client:load />
+  </main>
+</Layout>

@@ -1,0 +1,31 @@
+---
+const feedImages = [
+  { src: '/media-assets/imgs/1.jpg', alt: 'Coffee showcase' },
+  { src: '/media-assets/cappuccino.png', alt: 'Cappuccino' },
+  { src: '/media-assets/imgs/2.jpg', alt: 'Coffee artistry' },
+  { src: '/media-assets/macchiato.png', alt: 'Macchiato' },
+  { src: '/media-assets/imgs/3.jpg', alt: 'Coffee culture' },
+  { src: '/media-assets/coldbrew.png', alt: 'Cold brew' },
+];
+---
+
+<section class="instagram-feed">
+  <div class="instagram-feed-container">
+    <div class="instagram-header">
+      <h2 class="instagram-title">
+        Follow <span class="highlight">Us</span>
+      </h2>
+      <div class="instagram-subtitle">@cyzero_coffee</div>
+      <a href="https://instagram.com" class="instagram-btn" target="_blank" rel="noopener noreferrer">
+        Follow on Instagram →
+      </a>
+    </div>
+    <div class="instagram-grid">
+      {feedImages.map((item) => (
+        <div class="instagram-item">
+          <img src={item.src} alt={item.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

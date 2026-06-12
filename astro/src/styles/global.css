@@ -1,0 +1,11 @@
+@import './core.css';
+
+html, body {
+  height: auto;
+  min-height: 100%;
+}
+
+main {
+  min-height: calc(100vh - 90px);
+  width: 100%;
+}

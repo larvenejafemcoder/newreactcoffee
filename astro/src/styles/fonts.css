@@ -1,0 +1,5 @@
+/* Font loading is handled via CDN in Layout.astro.
+   Pretendard Variable: body text, navbar, buttons, descriptions
+   SUIT Variable: headings, product names, display text
+   JetBrains Mono: labels, annotations, editorial tags
+   Noto Sans KR: Korean character fallback */

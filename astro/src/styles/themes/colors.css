@@ -1,0 +1,29 @@
+:root {
+  --espresso: #2C1810;
+  --dark-roast: #1A0F0A;
+  --cream: #FFF8F0;
+  --cream-dark: #F5E6D3;
+  --latte: #C9A96E;
+  --caramel: #D4A574;
+  --mocha: #A67B5B;
+  --matcha: #8B7D6B;
+  --gold: #D4A017;
+  --warm-brown: #8B6914;
+  --cinnamon: #9B4A1F;
+  --toast: #6B4423;
+  --bg-overlay: rgba(26, 15, 10, 0.82);
+  --white-coffee: #FFF8F0;
+  --sandy-brown: #D4A574;
+  --xiketic: #2C1810;
+  --smoky-black: #1A0F0A;
+  --eerie-black: #0D0806;
+
+  --hsl-purple-dark: hsl(290, 80%, 40%);
+  --hsl-purple-light: hsl(290, 80%, 90%);
+  --hsl-pink-dark: hsl(320, 80%, 40%);
+  --hsl-pink-light: hsl(320, 80%, 90%);
+
+  --font-display: 'SUIT Variable', 'Noto Sans KR', sans-serif;
+  --font-body: 'Pretendard Variable', 'Pretendard', 'Noto Sans KR', sans-serif;
+  --font-label: 'JetBrains Mono', 'Noto Sans KR', monospace;
+}

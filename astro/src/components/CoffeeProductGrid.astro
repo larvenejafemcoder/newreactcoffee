@@ -1,0 +1,284 @@
+---
+interface Product {
+  number: string
+  name: string
+  subtitle: string
+  image: string
+  price: string
+  origin: string
+  roast: string
+  notes: string[]
+  description: string
+  featured: boolean
+  gridArea: string
+  link: string
+}
+
+function getRoastColor(roast: string): string {
+  const colors: Record<string, string> = {
+    'Light': '#D4A574',
+    'Light-Medium': '#B8864E',
+    'Medium': '#8B6914',
+    'Medium-Dark': '#6B4423',
+    'Dark': '#3E1F0D',
+    'Cold Brew': '#2C1810',
+  }
+  return colors[roast] || '#8B6914'
+}
+
+const products: Product[] = [
+  {
+    number: '01',
+    name: 'Ethiopian',
+    subtitle: 'Yirgacheffe',
+    image: 'coffee.png',
+    price: '₩8,500',
+    origin: 'Ethiopia',
+    roast: 'Light',
+    notes: ['Bergamot', 'Honey', 'Lavender'],
+    description: 'A luminous cup with tea-like body, floral aroma, and a sweet citrus finish.',
+    featured: true,
+    gridArea: 'f1',
+    link: '#',
+  },
+  {
+    number: '02',
+    name: 'A-Mê Đào',
+    subtitle: 'Peach Blossom',
+    image: 'macchiato.png',
+    price: '₩6,500',
+    origin: 'Da Lat, Vietnam',
+    roast: 'Medium',
+    notes: ['Peach', 'Chocolate', 'Caramel'],
+    description: 'Stone fruit sweetness balanced with rich cacao undertones.',
+    featured: false,
+    gridArea: 's1',
+    link: '#',
+  },
+  {
+    number: '03',
+    name: 'A-Mê Mơ',
+    subtitle: 'Apricot Dream',
+    image: 'coldbrew.png',
+    price: '₩6,500',
+    origin: 'Colombia Huila',
+    roast: 'Light-Medium',
+    notes: ['Apricot', 'Brown Sugar', 'Citrus'],
+    description: 'Bright acidity with a silky body and lingering sweetness.',
+    featured: false,
+    gridArea: 's2',
+    link: '#',
+  },
+  {
+    number: '04',
+    name: 'A-Mê Tuyết Quất',
+    subtitle: 'Snow Kumquat',
+    image: 'hotcappuccino.png',
+    price: '₩6,500',
+    origin: 'Kenya Nyeri',
+    roast: 'Light',
+    notes: ['Blackcurrant', 'Wine', 'Floral'],
+    description: 'Complex berry notes with a wine-like acidity and floral finish.',
+    featured: false,
+    gridArea: 's3',
+    link: '#',
+  },
+  {
+    number: '05',
+    name: 'A-Mê Yuzu',
+    subtitle: 'Citrus Harmony',
+    image: 'yuzuamericano.png',
+    price: '₩6,500',
+    origin: 'Jeju Island',
+    roast: 'Light',
+    notes: ['Yuzu', 'Green Tea', 'Jasmine'],
+    description: 'A delicate fusion of Korean citrus and premium green tea tones.',
+    featured: false,
+    gridArea: 's4',
+    link: '#',
+  },
+  {
+    number: '06',
+    name: 'Americano Nóng',
+    subtitle: 'Classic Black',
+    image: 'originalcoldbew.png',
+    price: '₩5,500',
+    origin: 'Brazil Cerrado',
+    roast: 'Dark',
+    notes: ['Cocoa', 'Peanut', 'Dark Chocolate'],
+    description: 'Bold and straightforward with deep roasted notes and a clean finish.',
+    featured: false,
+    gridArea: 's5',
+    link: '#',
+  },
+  {
+    number: '07',
+    name: 'Cappuccino Đá',
+    subtitle: 'Iced Velvet',
+    image: 'coldcappucino.png',
+    price: '₩6,500',
+    origin: 'Guatemala Antigua',
+    roast: 'Medium',
+    notes: ['Caramel', 'Milk Chocolate', 'Almond'],
+    description: 'Smooth and creamy with nutty undertones and caramel sweetness.',
+    featured: false,
+    gridArea: 's6',
+    link: '#',
+  },
+  {
+    number: '08',
+    name: 'Cappuccino Nóng',
+    subtitle: 'Warm Classic',
+    image: 'peachamericano.png',
+    price: '₩6,500',
+    origin: 'Costa Rica Tarrazu',
+    roast: 'Medium',
+    notes: ['Honey', 'Orange Blossom', 'Vanilla'],
+    description: 'A comforting cup with honeyed sweetness and floral highlights.',
+    featured: false,
+    gridArea: 's7',
+    link: '#',
+  },
+  {
+    number: '09',
+    name: 'Caramel Macchiato',
+    subtitle: 'Đá',
+    image: 'specialty1.png',
+    price: '₩7,500',
+    origin: 'Honduras',
+    roast: 'Medium-Dark',
+    notes: ['Butterscotch', 'Walnut', 'Toffee'],
+    description: 'Layered with buttery caramel notes and a rich, nutty finish.',
+    featured: true,
+    gridArea: 'f2',
+    link: '#',
+  },
+  {
+    number: '10',
+    name: 'Caramel Macchiato',
+    subtitle: 'Nóng',
+    image: 'specialty2.png',
+    price: '₩7,500',
+    origin: 'Nicaragua',
+    roast: 'Dark',
+    notes: ['Cherry', 'Rum', 'Cacao'],
+    description: 'Deep and complex with dark fruit sweetness and cacao bitterness.',
+    featured: false,
+    gridArea: 's8',
+    link: '#',
+  },
+  {
+    number: '11',
+    name: 'Cold Brew',
+    subtitle: 'Kim Quất',
+    image: 'specialty3.png',
+    price: '₩6,500',
+    origin: 'Ethiopia / Korea',
+    roast: 'Cold Brew',
+    notes: ['Kumquat', 'Mint', 'Citrus'],
+    description: 'A refreshing fusion of Korean kumquat with smooth cold brew.',
+    featured: false,
+    gridArea: 's9',
+    link: '#',
+  },
+  {
+    number: '12',
+    name: 'Cold Brew',
+    subtitle: 'Truyền Thống',
+    image: 'cappuccino.png',
+    price: '₩5,500',
+    origin: 'Vietnam',
+    roast: 'Cold Brew',
+    notes: ['Dark Chocolate', 'Smooth', 'Nuts'],
+    description: 'Traditional Vietnamese cold brew — bold, smooth, and deeply satisfying.',
+    featured: true,
+    gridArea: 'f3',
+    link: '#',
+  },
+];
+---
+
+<section class="coffee-product-grid">
+  <div class="coffee-product-grid-container">
+    <div class="section-label">Curated Selection</div>
+    <h2 class="section-heading">Signature <span class="heading-accent">Collection</span></h2>
+
+    <div class="editorial-grid">
+      {products.map((product) => (
+        <article
+          class={`product-card ${product.featured ? 'featured' : ''}`}
+          style={{
+            gridArea: product.gridArea,
+          }}
+        >
+          <a href={product.link} class="product-link">
+            {product.featured ? (
+              <>
+                <div class="featured-image">
+                  <span class="card-number">{product.number}</span>
+                  <img
+                    src={`/media-assets/${product.image}`}
+                    alt={`${product.name} ${product.subtitle}`}
+                    loading="lazy"
+                  />
+                  <span class="roast-badge">{product.roast} Roast</span>
+                </div>
+                <div class="featured-content">
+                  <div class="origin-line">
+                    <span class="origin-badge">{product.origin}</span>
+                  </div>
+                  <h3 class="featured-name">
+                    {product.name}
+                    <span class="featured-sub">{product.subtitle}</span>
+                  </h3>
+                  <p class="featured-price">{product.price}</p>
+                  <p class="featured-desc">{product.description}</p>
+                  <div class="notes-group">
+                    {product.notes.map((note) => (
+                      <span class="note-tag">{note}</span>
+                    ))}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div class="card-image">
+                  <span class="card-number-sm">{product.number}</span>
+                  <img
+                    src={`/media-assets/${product.image}`}
+                    alt={`${product.name} ${product.subtitle}`}
+                    loading="lazy"
+                  />
+                  <span class="roast-dot" style={{ backgroundColor: getRoastColor(product.roast) }} title={product.roast} />
+                </div>
+                <div class="card-content">
+                  <div class="card-header">
+                    <h3 class="card-name">{product.name}</h3>
+                    <p class="card-sub">{product.subtitle}</p>
+                  </div>
+                  <p class="card-price">{product.price}</p>
+                  <div class="card-overlay">
+                    <div class="origin-line-small">
+                      <span class="origin-badge-sm">{product.origin}</span>
+                    </div>
+                    <p class="card-desc">{product.description}</p>
+                    <div class="notes-group-sm">
+                      {product.notes.map((note) => (
+                        <span class="note-tag-sm">{note}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <div class="view-more-container">
+      <a href="/collection" class="view-more-btn">View Full Catalog →</a>
+    </div>
+  </div>
+</section>
+

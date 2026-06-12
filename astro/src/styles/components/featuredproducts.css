@@ -1,0 +1,130 @@
+.featured-products {
+  padding: 6rem 2rem;
+  background: var(--dark-roast);
+  position: relative;
+}
+
+.featured-products::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--latte), transparent);
+}
+
+.featured-products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-products-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+.featured-products-subtitle {
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--mocha);
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+
+.featured-products-title .highlight {
+  color: var(--latte);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.featured-products-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid transparent;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+}
+
+.category-item:hover {
+  border-left-color: var(--latte);
+  background: rgba(201, 169, 110, 0.05);
+  padding-left: 2rem;
+}
+
+.category-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.category-item:hover .category-name {
+  color: var(--latte);
+}
+
+.category-count {
+  font-size: 0.9rem;
+  color: var(--mocha);
+  font-weight: 600;
+}
+
+.featured-products-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.featured-products-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+.featured-products-image::before {
+  content: '';
+  position: absolute;
+  inset: 20%;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .featured-products-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .featured-products-image {
+    order: -1;
+  }
+  .featured-products-image img {
+    max-width: 250px;
+  }
+}

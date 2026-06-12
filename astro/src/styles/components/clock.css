@@ -1,0 +1,142 @@
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.clock-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.analog-clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--xiketic);
+  border: 4px solid var(--sandy-brown);
+  box-shadow: 0 0 20px rgba(215, 138, 59, 0.3), 0 0 60px rgba(215, 138, 59, 0.1);
+  position: relative;
+  padding: 10px;
+}
+
+.clock-face {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+}
+
+.hour-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 20px;
+  margin-left: -2px;
+  margin-top: -10px;
+  background-color: var(--white-coffee);
+  border-radius: 2px;
+  transform-origin: center center;
+}
+
+.hour-marker.major {
+  width: 6px;
+  height: 28px;
+  margin-left: -3px;
+  margin-top: -14px;
+  background-color: var(--sandy-brown);
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 4px;
+}
+
+.hour-hand {
+  width: 6px;
+  height: 70px;
+  margin-left: -3px;
+  background-color: var(--white-coffee);
+  z-index: 3;
+}
+
+.minute-hand {
+  width: 4px;
+  height: 100px;
+  margin-left: -2px;
+  background-color: var(--white-coffee);
+  z-index: 2;
+}
+
+.second-hand {
+  width: 2px;
+  height: 110px;
+  margin-left: -1px;
+  background-color: var(--sandy-brown);
+  z-index: 1;
+}
+
+.center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  margin-top: -6px;
+  background-color: var(--sandy-brown);
+  border-radius: 50%;
+  z-index: 4;
+  box-shadow: 0 0 10px rgba(215, 138, 59, 0.5);
+}
+
+.digital-clock {
+  text-align: center;
+}
+
+.digital-time {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--sandy-brown);
+  font-family: var(--font-label);
+  text-shadow: 0 0 20px rgba(215, 138, 59, 0.3);
+  letter-spacing: 4px;
+}
+
+.digital-date {
+  font-size: 1.2rem;
+  color: var(--white-coffee);
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .analog-clock {
+    width: 220px;
+    height: 220px;
+  }
+
+  .digital-time {
+    font-size: 2.5rem;
+  }
+
+  .hour-hand {
+    height: 50px;
+  }
+
+  .minute-hand {
+    height: 75px;
+  }
+
+  .second-hand {
+    height: 80px;
+  }
+}

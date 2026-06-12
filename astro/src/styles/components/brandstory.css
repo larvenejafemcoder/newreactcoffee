@@ -1,0 +1,130 @@
+.brand-story {
+  padding: 8rem 2rem;
+  background: linear-gradient(180deg, var(--dark-roast) 0%, var(--espresso) 100%);
+  position: relative;
+}
+
+.brand-story::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(201, 169, 110, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.brand-story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.brand-story-title {
+  text-align: left;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--cream);
+  margin-bottom: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+}
+
+.brand-story-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--latte);
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.brand-story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.brand-story-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.brand-story-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  pointer-events: none;
+}
+
+.brand-story-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s ease;
+}
+
+.brand-story-image:hover img {
+  transform: scale(1.03);
+}
+
+.brand-story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brand-story-text p {
+  color: var(--cream);
+  line-height: 1.9;
+  margin: 0;
+  font-size: 1.05rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.brand-story-text p:first-of-type {
+  font-size: 1.2rem;
+  opacity: 1;
+  font-weight: 600;
+}
+
+.brand-story-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--latte);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid var(--latte);
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+.brand-story-btn:hover {
+  background: var(--latte);
+  color: var(--dark-roast);
+}
+
+@media (max-width: 768px) {
+  .brand-story {
+    padding: 4rem 1.5rem;
+  }
+  .brand-story-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .brand-story-image img {
+    height: 300px;
+  }
+}

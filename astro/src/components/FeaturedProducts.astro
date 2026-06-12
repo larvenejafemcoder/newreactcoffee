@@ -1,0 +1,31 @@
+---
+const categories = [
+  { name: 'COFFEE', count: 17 },
+  { name: 'TEA', count: 4 },
+  { name: 'LATTE & FRAPPE', count: 14 },
+  { name: 'SIGNATURE FOOD', count: 7 },
+  { name: 'PASTRY & MORE', count: 17 },
+];
+---
+
+<section class="featured-products">
+  <div class="featured-products-container">
+    <div class="featured-products-subtitle">Categories</div>
+    <h2 class="featured-products-title">
+      "Our" <span class="highlight">COLLECTION</span>
+    </h2>
+    <div class="featured-products-content">
+      <div class="categories-list">
+        {categories.map((category) => (
+          <div class="category-item">
+            <span class="category-name">{category.name}</span>
+            <span class="category-count">({category.count})</span>
+          </div>
+        ))}
+      </div>
+      <div class="featured-products-image">
+        <img src="/media-assets/coffee.png" alt="Coffee Collection" />
+      </div>
+    </div>
+  </div>
+</section>

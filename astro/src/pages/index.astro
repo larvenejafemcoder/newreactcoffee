@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Hero from '../components/Hero.astro';
+import BrandStory from '../components/BrandStory.astro';
+import FeaturedProducts from '../components/FeaturedProducts.astro';
+import CoffeeProductGrid from '../components/CoffeeProductGrid.astro';
+import QualityStory from '../components/QualityStory.astro';
+import StoreLocator from '../components/StoreLocator';
+import InstagramFeed from '../components/InstagramFeed.astro';
+import NewsSection from '../components/NewsSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <div class="home-page">
+    <Header client:load />
+    <main class="main-content">
+      <Hero />
+      <BrandStory />
+      <FeaturedProducts />
+      <CoffeeProductGrid />
+      <QualityStory />
+      <StoreLocator client:load />
+      <InstagramFeed />
+      <NewsSection />
+    </main>
+    <Footer />
+  </div>
+</Layout>
