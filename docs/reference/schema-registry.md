@@ -1,6 +1,6 @@
 # Schema Registry
 
-The schema registry manages JSON Schemas used to validate incoming events. Each event type can have an associated schema.
+The schema registry manages JSON Schemas used to validate incoming events. Each event type can have an associated schema. Schemas are stored in the management API's backing store.
 
 ## Managing schemas via API
 

@@ -4,19 +4,13 @@ EventFlow is designed to scale horizontally with minimal operational overhead.
 
 ## Horizontal scaling
 
-EventFlow is **stateless** for event ingestion and processing. State is externalized to PostgreSQL (rules, schema) and Redis (rate limiting, idempotency). This means you can add more instances behind a load balancer without any coordination.
+EventFlow is **stateless** for event ingestion and processing. You can add more instances behind a load balancer without any coordination.
 
 ```mermaid
 graph LR
     LB[Load Balancer] --> EF1[EventFlow instance 1]
     LB --> EF2[EventFlow instance 2]
     LB --> EF3[EventFlow instance 3]
-    EF1 --> PG[(PostgreSQL)]
-    EF1 --> R[(Redis)]
-    EF2 --> PG
-    EF2 --> R
-    EF3 --> PG
-    EF3 --> R
     EF1 --> K[Kafka / S3 / Webhook]
     EF2 --> K
     EF3 --> K
@@ -53,10 +47,6 @@ Webhook sinks use a worker pool (default 10 workers per sink). Increase with the
     url: https://hooks.example.com
     workers: 50
 ```
-
-## API key management
-
-API keys are stored in PostgreSQL, so they are available to all instances. Use the `eventflow keys` CLI on any instance to create or revoke keys.
 
 ## Load balancing HTTP ingestion
 
@@ -118,6 +108,4 @@ spec:
           averageUtilization: 80
 ```
 
-## Rate limiting per instance
 
-Rate limits are tracked in Redis, making them accurate across all instances. Redis is a single point of state – ensure it is properly replicated or use a managed Redis cluster for high availability.

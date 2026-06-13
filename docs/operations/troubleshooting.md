@@ -4,7 +4,7 @@
 
 ### "too many open files"
 
-EventFlow opens connections to sinks, databases, and Redis. If you see this in the logs:
+EventFlow opens connections to sinks and external services. If you see this in the logs:
 
 ```
 error: accept tcp [::]:8080: accept4: too many open files
@@ -19,19 +19,6 @@ ulimit -n
 # Set higher limit (systemd: see LimitNOFILE in unit file)
 ulimit -n 65536
 ```
-
-### "postgres connection refused"
-
-```
-error: failed to connect to postgres: dial tcp 127.0.0.1:5432: connect: connection refused
-```
-
-**Solutions:**
-
-1. Verify PostgreSQL is running: `systemctl status postgresql`
-2. Check the connection string in `EVENTFLOW_DB_POSTGRES_DSN`.
-3. Ensure PostgreSQL is listening on the expected interface.
-4. Check firewall rules.
 
 ### "sink timeout"
 
@@ -109,18 +96,7 @@ When reporting an issue, include:
 
 ## Health check failures
 
-If `/ready` returns non-200, check each dependency:
-
-```bash
-# Check Redis
-redis-cli ping
-
-# Check PostgreSQL
-pg_isready
-
-# Check Kafka
-kafka-broker-api-versions --bootstrap-server localhost:9092
-```
+If `/ready` returns non-200, check dependencies.
 
 ## Still stuck?
 

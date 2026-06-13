@@ -21,7 +21,7 @@ go tool cover -html=coverage.out -o coverage.html
 
 ### Integration tests
 
-Integration tests require Docker (for Postgres and Redis):
+Integration tests may require Docker for external services:
 
 ```bash
 make integration

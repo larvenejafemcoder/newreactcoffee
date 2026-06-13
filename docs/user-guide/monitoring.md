@@ -91,7 +91,7 @@ curl http://localhost:8080/health
 {"status":"ok","uptime":"12h34m56s"}
 
 curl http://localhost:8080/ready
-{"status":"ready","checks":[{"name":"postgres","status":"pass"},{"name":"redis","status":"pass"}]}
+{"status":"ready"}
 ```
 
 ## Structured logging

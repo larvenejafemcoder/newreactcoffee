@@ -40,7 +40,7 @@ Below is a high-level architecture diagram of EventFlow. It shows the flow of an
 flowchart TD
     Client["Client / App"] -->|HTTP POST| Ingress["Ingress Gateway\n(HTTP / Webhook)"]
     Ingress --> Auth["Authentication\n(API Key / Bearer)"]
-    Auth --> RateLimit["Rate Limiter\n(Redis)"]
+    Auth --> RateLimit["Rate Limiter"]
     RateLimit --> Validate["Schema Validator\n(JSON Schema Registry)"]
     Validate --> Transform["Transform Pipeline\n(ordered, sequential)"]
 
@@ -59,8 +59,7 @@ flowchart TD
     Sink1 & Sink2 & Sink3 & Sink4 --> DLQ["Dead Letter Queue\n(failed events)"]
 
     Admin["Admin / CLI"] -->|Management API| Management["Management API\n(rules, schemas, keys)"]
-    Management --> DB[("PostgreSQL\n-rules-")]
-    Management --> Redis[("Redis\n-rate limits & state-")]
+    Management --> DB[("Rules & State")]
 
     Prometheus["Prometheus"] -->|scrape| Metrics["/metrics endpoint"]
     Logs["Structured logs\n(JSON)"] --> Stdout
