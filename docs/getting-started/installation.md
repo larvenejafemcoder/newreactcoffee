@@ -1,69 +1,84 @@
 # Installation
 
+This guide covers setting up the CyZerO project on your local machine.
+
+---
+
 ## Prerequisites
 
-- **Binary install**: a 64-bit Linux, macOS, or Windows system
-- **Docker install**: Docker Engine 24.0+ and Docker Compose v2
-- **Source build**: Go 1.21+, `make`, `git`
+- **Node.js** v18.0.0 or higher (recommended: v20 LTS)
+- **npm** v9+ (ships with Node.js)
+- A code editor (VS Code recommended with the [Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode))
 
-## Install from binary
+> **Note:** This project does not use a separate backend. All content is static and built at compile time.
 
-Download the latest release for your platform from the [releases page](https://github.com/eventflow/eventflow/releases).
+---
 
-```bash
-# Linux amd64
-curl -LO https://github.com/eventflow/eventflow/releases/download/v1.2.0/eventflow_1.2.0_linux_amd64.tar.gz
-tar -xzf eventflow_1.2.0_linux_amd64.tar.gz
-sudo mv eventflow /usr/local/bin/
-```
+## Steps
+
+### 1. Clone the repository
 
 ```bash
-# macOS arm64
-curl -LO https://github.com/eventflow/eventflow/releases/download/v1.2.0/eventflow_1.2.0_darwin_arm64.tar.gz
-tar -xzf eventflow_1.2.0_darwin_arm64.tar.gz
-sudo mv eventflow /usr/local/bin/
+git clone <repository-url>
+cd newreactcoffee
 ```
 
-## Install via Docker
+### 2. Navigate to the Astro project directory
+
+All source code lives under the `astro/` subdirectory:
 
 ```bash
-docker pull eventflow/eventflow:latest
+cd astro
 ```
 
-Quick test:
+### 3. Install dependencies
 
 ```bash
-docker run --rm eventflow/eventflow:latest version
+npm install
 ```
 
-Production Docker Compose setups are covered in the [Quickstart](./quickstart.md).
+This installs:
 
-## Build from source
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `astro` | ^5.5.0 | Static site generator |
+| `@astrojs/react` | ^4.2.0 | React integration for islands |
+| `react` | ^18.2.0 | UI library |
+| `react-dom` | ^18.2.0 | React DOM renderer |
+| `@types/react` | ^18.2.0 | TypeScript types for React |
+| `@types/react-dom` | ^18.2.0 | TypeScript types for ReactDOM |
+| `typescript` | ^5.0.0 | TypeScript compiler |
+
+### 4. Verify the installation
 
 ```bash
-git clone https://github.com/eventflow/eventflow.git
-cd eventflow
-make build
+npm ls --depth=0
 ```
 
-The binary is produced at `bin/eventflow`. Optionally install it system-wide:
+You should see all dependencies listed without errors.
+
+### 5. Start the dev server
 
 ```bash
-sudo make install
+npm run dev
 ```
 
-## Verify the installation
+Open **`http://localhost:4321`** in your browser. You should see the CyZerO home page.
 
-```bash
-eventflow version
-```
+---
 
-Expected output:
+## Troubleshooting
 
-```
-EventFlow v1.2.0 (commit a1b2c3d4, built 2026-06-01T10:00:00Z)
-```
+| Problem | Solution |
+|---------|----------|
+| `node: command not found` | Install Node.js from [nodejs.org](https://nodejs.org) |
+| `npm install` fails with permissions | Try `npm install --legacy-peer-deps` |
+| Port 4321 already in use | Astro will automatically suggest the next available port |
+| Fonts not loading | Check your internet connection — fonts are loaded via CDN |
 
-## Next steps
+---
 
-Proceed to the [Quickstart](./quickstart.md) to send your first event.
+## Next Steps
+
+- [Development guide](development.md) — learn about hot reload, browser tools, and workflow
+- [Project structure](project-structure.md) — understand the folder layout

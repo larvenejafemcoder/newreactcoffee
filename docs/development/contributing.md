@@ -1,65 +1,96 @@
 # Contributing
 
-Thank you for your interest in contributing to EventFlow. We welcome contributions of all kinds: bug fixes, features, documentation improvements, and issue triage.
+Guidelines for contributing to the CyZerO project.
+
+---
 
 ## Code of Conduct
 
-This project adheres to the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/). By participating, you agree to uphold this code. Report unacceptable behavior to conduct@eventflow.io.
+This project follows a standard code of conduct. All contributors are expected to be respectful, constructive, and collaborative.
 
-## How to contribute
+---
 
-### Reporting bugs
+## How to Contribute
 
-Open a [GitHub Issue](https://github.com/eventflow/eventflow/issues/new) with:
+### 1. Report Issues
+
+Open an issue with:
 
 - A clear, descriptive title
-- Steps to reproduce (including configuration and sample events)
-- Expected vs actual behavior
-- EventFlow version and environment details
+- Steps to reproduce (if a bug)
+- Expected vs. actual behavior
+- Screenshots (if visual)
+- Browser/device info
 
-### Feature requests
+### 2. Suggest Changes
 
-Open an issue with the `enhancement` label. Describe the problem you're solving and, if applicable, how you would implement it.
+Open an issue with the "enhancement" label describing:
 
-### Pull requests
+- What you want to change
+- Why it improves the project
+- Any design considerations
 
-1. Fork the repository.
-2. Create a branch from `main`: `git checkout -b feat/my-feature`.
-3. Make your changes.
-4. Run tests and linting: `make test && make lint`.
-5. Sign your commits (`git commit -s`).
-6. Push and open a PR against `main`.
+### 3. Submit Code
 
-## Commit conventions
-
-We follow [Conventional Commits](https://www.conventionalcommits.org/):
+#### Branch Naming
 
 ```
-feat(ingestion): add batch event endpoint
-fix(sinks): retry backoff overflow in kafka sink
-docs(readme): update quickstart example
-test(transforms): add js_script benchmark
+feature/description     # New features
+fix/description         # Bug fixes
+style/description       # CSS/design changes
+content/description     # Text or image updates
 ```
 
-Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `perf`, `ci`.
+#### Commit Conventions
 
-## Documentation contributions
+Use conventional commits:
 
-The `docs/` directory contains all project documentation. Improvements are welcome. Docs are written in Markdown and follow the existing structure and style.
+```
+feat: add new product grid hover animation
+fix: correct menu close button z-index
+style: update hero heading letter-spacing
+content: replace brand story images
+chore: update Astro to 5.6.0
+```
 
-## Review expectations
+#### Pull Request Process
 
-- All PRs require at least one maintainer review.
-- CI must pass (lint, unit tests, integration tests).
-- New features should include tests.
-- API changes should update the OpenAPI spec.
-- Documentation updates should accompany feature changes.
+1. Create a branch from `main`
+2. Make your changes
+3. Run `npm run lint` and fix any errors
+4. Test locally with `npm run dev`
+5. Create a pull request with a description of changes
+6. Wait for review
 
-## Development setup
+---
 
-See [Local Setup](./local-setup.md) for instructions on setting up a development environment.
+## Development Setup
 
-## Getting help
+```bash
+cd astro
+npm install
+npm run dev
+```
 
-- GitHub Issues for bug reports and feature requests.
-- Discord `#contributors` channel for questions.
+See the [Installation guide](../getting-started/installation.md) for details.
+
+---
+
+## Code Style
+
+- **Astro:** One component per file, frontmatter for data, template for markup
+- **React:** Functional components with hooks, no class components
+- **CSS:** Component-prefixed class names, no `!important`
+- **TypeScript:** Strict mode, prefer interfaces over types for objects
+- **Images:** Optimize before committing (under 200 KB)
+
+---
+
+## Review Criteria
+
+A pull request will be evaluated on:
+
+- **Functionality** — does it work without breaking existing features?
+- **Consistency** — does it follow project conventions?
+- **Performance** — does it add unnecessary JS or images?
+- **Accessibility** — are interactive elements keyboard-accessible?
